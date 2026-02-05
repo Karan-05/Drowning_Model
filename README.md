@@ -27,27 +27,3 @@ script for painting the initials **KA** on a GitHub contribution graph.
    preprocessing → sequence generation → LRCN training → evaluation.
 3. The `docs/` folder contains narratives and diagrams that complement the
    notebook.
-
-## Painting "KA" on your contribution graph
-
-Use `scripts/ka_commit_art.py` to create a KA monogram using backdated empty
-commits. The script purposely works with any repo so you can paint on a
-throwaway clone.
-
-```bash
-python scripts/ka_commit_art.py \
-  --repo /path/to/repo \
-  --start-date 2023-05-14 \
-  --message "KA art" \
-  --intensity 3
-```
-
-- `--start-date` must be the Sunday for the top-left cell where you want the K
-  to begin. Adjust it (±7 days) until the design sits inside the current
-  52-week window on GitHub.
-- `--intensity` controls how dark each lit cell becomes (more commits → darker
-  green). Keep it between 1 and 10.
-- Add `--dry-run` if you want to preview the dates before creating commits.
-
-After the script finishes run `git push` to sync with GitHub, wait ~1 minute and
-refresh your contributions page – "KA" should now be proudly displayed.
